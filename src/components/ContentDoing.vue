@@ -23,30 +23,9 @@
                   </div>
                   <div class="modal-footer">
                     <div class="wrapper center" v-if="forModalDetails.status == 'doing'">
-                      <popover name="confirm-before-doing">
-                        <div class="">
-                          Are you sure?
-                        </div>
-                        <span><button @click="confirmBefore(forModalDetails)" v-popover.top="{ name: 'confirm-before-doing' }" type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Yes</button></span>
-                        <span><button type="button" class="btn btn-success btn-sm" v-popover.top="{ name: 'confirm-before-doing' }" >No</button></span>
-                      </popover>
-                      <popover name="confirm-deletion">
-                        <div class="">
-                          Are you sure?
-                        </div>
-                        <span><button @click="deleteCard(forModalDetails)" v-popover.top="{ name: 'confirm-deletion-todo' }" type="button" class="btn btn-danger btn-sm">Yes</button></span>
-                        <span><button type="button" class="btn btn-success btn-sm" v-popover.top="{ name: 'confirm-deletion' }" >No</button></span>
-                      </popover>
-                      <popover name="confirm-next-doing">
-                        <div class="">
-                          Are you sure?
-                        </div>
-                        <span><button @click="confirmNext(forModalDetails)" v-popover.top="{ name: 'confirm-next-doing' }" type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Yes</button></span>
-                        <span><button type="button" class="btn btn-success btn-sm" v-popover.top="{ name: 'confirm-next-doing' }" >No</button></span>
-                      </popover>
-                      <span class="pull-left"><button v-popover.top="{ name: 'confirm-before-doing' }" type="button" class="btn btn-warning btn-sm">To-Do</button></span>
-                      <span><button v-popover.top="{ name: 'confirm-deletion' }" type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Delete</button></span>
-                      <span class="pull-right"><button v-popover.top="{ name: 'confirm-next-doing' }" type="button" class="btn btn-success btn-sm">Done</button></span>
+                      <span class="pull-left"><button type="button" class="btn btn-warning btn-sm" @click="confirmBefore(forModalDetails)">To-Do</button></span>
+                      <span><button type="button" class="btn btn-danger btn-sm" data-dismiss="modal" @click="deleteCard(forModalDetails)">Delete</button></span>
+                      <span class="pull-right"><button type="button" class="btn btn-success btn-sm" @click="confirmNext(forModalDetails)">Done</button></span>
                     </div>
                   </div>
                 </div>

@@ -23,22 +23,8 @@
                   </div>
                   <div class="modal-footer">
                     <div class="wrapper center" v-if="forModalDetails.status == 'done'">
-                      <popover name="confirm-before-done">
-                        <div class="">
-                          Are you sure?
-                        </div>
-                        <span><button @click="confirmBefore(forModalDetails)" v-popover.top="{ name: 'confirm-before-done' }" type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Yes</button></span>
-                        <span><button type="button" class="btn btn-success btn-sm" v-popover.top="{ name: 'confirm-before-done' }" >No</button></span>
-                      </popover>
-                      <popover name="confirm-deletion">
-                        <div class="">
-                          Are you sure?
-                        </div>
-                        <span><button @click="deleteCard(forModalDetails)" v-popover.top="{ name: 'confirm-deletion-todo' }" type="button" class="btn btn-danger btn-sm">Yes</button></span>
-                        <span><button type="button" class="btn btn-success btn-sm" v-popover.top="{ name: 'confirm-deletion' }" >No</button></span>
-                      </popover>
-                      <span class="pull-left"><button v-popover.top="{ name: 'confirm-before-done' }" type="button" class="btn btn-info btn-sm" data-dismiss="modal">Doing</button></span>
-                      <span class="fix-mid"><button v-popover.top="{ name: 'confirm-deletion' }" type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Delete</button></span>
+                      <span class="pull-left"><button type="button" class="btn btn-info btn-sm" data-dismiss="modal" @click="confirmBefore(forModalDetails)">Doing</button></span>
+                      <span class="fix-mid"><button type="button" class="btn btn-danger btn-sm" data-dismiss="modal" @click="deleteCard(forModalDetails)">Delete</button></span>
                     </div>
                   </div>
                 </div>

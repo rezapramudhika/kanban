@@ -23,22 +23,8 @@
                   </div>
                   <div class="modal-footer">
                     <div class="wrapper center" v-if="forModalDetails.status == 'backLog'">
-                      <popover name="confirm-deletion">
-                        <div class="">
-                          Are you sure?
-                        </div>
-                        <span><button @click="deleteCard(forModalDetails)" v-popover.top="{ name: 'confirm-deletion' }" type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Yes</button></span>
-                        <span><button type="button" class="btn btn-success btn-sm" v-popover.top="{ name: 'confirm-deletion' }" >No</button></span>
-                      </popover>
-                      <popover name="confirm-next">
-                        <div class="">
-                          Are you sure?
-                        </div>
-                        <span><button @click="confirmNext(forModalDetails)" v-popover.top="{ name: 'confirm-next' }" type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Yes</button></span>
-                        <span><button type="button" class="btn btn-success btn-sm" v-popover.top="{ name: 'confirm-next' }" >No</button></span>
-                      </popover>
-                      <span class="fix-mid"><button v-popover.top="{ name: 'confirm-deletion' }" type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Delete</button></span>
-                      <span class="pull-right"><button v-popover.top="{ name: 'confirm-next' }" type="button" class="btn btn-warning btn-sm">To-Do</button></span>
+                      <span class="fix-mid"><button type="button" class="btn btn-danger btn-sm" data-dismiss="modal" @click="deleteCard(forModalDetails)">Delete</button></span>
+                      <span class="pull-right"><button type="button" class="btn btn-warning btn-sm" @click="confirmNext(forModalDetails)">To-Do</button></span>
                     </div>
                   </div>
                 </div>
